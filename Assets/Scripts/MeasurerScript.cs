@@ -90,11 +90,7 @@ public class MeasurerScript : MonoBehaviour {
 
     private bool IsVerticalVector(Vector3 vector)
     {
-        return AngleBetween(vector, new Vector3(0, 1, 0)) < Math.PI / 4 || AngleBetween(vector, new Vector3(0, -1, 0)) < Math.PI / 4;
-    }
-
-    private float AngleBetween(Vector3 vec1, Vector3 vec2)
-    {
-        return Mathf.Atan2(vec2.y - vec1.y, vec2.x - vec1.x);
+        var angle = Vector3.Angle(vector, new Vector3(0, 1, 0));
+        return angle <=45 || angle >= 135;
     }
 }
