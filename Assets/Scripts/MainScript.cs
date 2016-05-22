@@ -65,7 +65,7 @@ public class MainScript : MonoBehaviour
         // Display the cursor mesh.
         if (measurer.IsMeasuring())
         {
-            cursor.transform.position = measurer.UpdatePoints(headPosition, gazeDirection);
+            measurer.UpdatePoints(headPosition, gazeDirection);
         }
         else
         {
